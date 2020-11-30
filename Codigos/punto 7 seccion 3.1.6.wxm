@@ -1,0 +1,53 @@
+/* [wxMaxima batch file version 1] [ DO NOT EDIT BY HAND! ]*/
+/* [ Created with wxMaxima version 20.06.6 ] */
+/* [wxMaxima: input   start ] */
+/*PUNTO A*/
+load(vect)$
+w_1:[a_i,b_j,c_k]$
+w_2:[d_i,e_j,f_k]$
+w_3:[g_i,h_j,i_k]$
+w1:α*(w_2~w_3)$ /*Definicion de w1*/
+express(w1);
+w1.w_1=1; /*Por wi.w_j=δij*/
+α=(1)/(w_1.(w_2~w_3));/*Despejando α */
+/* Multiplicando α por w1 ---> w1*α=(α*(w_2~w_3)*((1)/(w_1.(w_2~w_3)) */
+w1:(w_2~w_3)/(w_1.((w_2~w_3)))$
+w1;
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+/*PUNTO B*/
+load(vect)$
+v_1.v1; /*e_1.e1=1=e1.e_1 por Por ei.e_j=δij */
+v1.v_1;
+V:(v_1.(v_2~v_3));
+V_0:(v1.(v2~v3));
+v_2~v_3=v1$
+v2~v3=v_1$
+V=(v_1.v1);
+V_d=(v1.v_1);
+V=V_0;/* Por lo tanto V*V_0=1 */
+
+/* [wxMaxima: input   end   ] */
+
+
+/* [wxMaxima: input   start ] */
+/*PUNTO D*/
+load(vect)$
+e_1:[4,2,1]$
+e_2:[3,3,0]$
+e_3:[0,0,2]$
+e1:express(e_2~e_3)/(e_3.(express(e_1~e_2))); /*Bases reciprocas*/
+e2:express(e_3~e_1)/(e_3.(express(e_1~e_2)));
+e3:express(e_1~e_2)/(e_3.(express(e_1~e_2)));
+a:[1,2,3]$
+a_contravariante:[a.e1,a.e2,a.e3]; /*Componentes covariantes y contravariantes*/
+a_covariante:[a.e_1,a.e_2,a.e_3];
+
+/* [wxMaxima: input   end   ] */
+
+
+
+/* Old versions of Maxima abort on loading files that end in a comment. */
+"Created with wxMaxima 20.06.6"$
